@@ -71,6 +71,55 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-前端小游戏" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/11/05/%E5%89%8D%E7%AB%AF%E5%B0%8F%E6%B8%B8%E6%88%8F/" class="article-date">
+  <time class="dt-published" datetime="2025-11-04T16:00:00.000Z" itemprop="datePublished">2025-11-05</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/2025-CTF-week1/">2025-?CTF-week1</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2025/11/05/%E5%89%8D%E7%AB%AF%E5%B0%8F%E6%B8%B8%E6%88%8F/">web前端小游戏</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="抓取黑客"><a href="#抓取黑客" class="headerlink" title="抓取黑客"></a>抓取黑客</h1><h2 id="先打开页面源代码看看"><a href="#先打开页面源代码看看" class="headerlink" title="先打开页面源代码看看"></a>先打开页面源代码看看</h2><p>通过ctrl+F查找flag，无果<br>查找外部引用的资源，.js文件,.css文件,图片等<br>分别找到一个link href&#x3D;”<a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css</a>“ rel&#x3D;”stylesheet”<br>与一个script src&#x3D;”game.js”&gt;&lt;&#x2F;script</p>
+<h2 id="进入可疑文件查找"><a href="#进入可疑文件查找" class="headerlink" title="进入可疑文件查找"></a>进入可疑文件查找</h2><p>“<a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css%22%E5%A4%AA%E7%83%A6%E4%BA%86%E5%85%88%E7%9C%8B%E5%8F%A6%E4%B8%80%E4%B8%AA">https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css&quot;太烦了先看另一个</a><br>“game.js”发现当分数小于0时有个atob函数atob(‘ZmxhZ3sxOTQ5MmMyOS00YjA5LTQzM2YtOGI5Zi1mYjI2ZTI0Mjg5ZDV9’)<br><img src="/images/w1-1.png"><br>注：abto函数是用来解码Base64编码的字符串的</p>
+<h2 id="检查-控制台-允许粘贴-解码"><a href="#检查-控制台-允许粘贴-解码" class="headerlink" title="检查-控制台-允许粘贴-解码"></a>检查-控制台-允许粘贴-解码</h2><p>flag{19492c29-4b09-433f-8b9f-fb26e24289d5}</p>
+<h2 id="尝试分数改为负数查看是否能得到flag"><a href="#尝试分数改为负数查看是否能得到flag" class="headerlink" title="尝试分数改为负数查看是否能得到flag"></a>尝试分数改为负数查看是否能得到flag</h2><p>score &#x3D; -1<br>updateScore()–失败</p>
+<p>score &#x3D; -1;<br>gameState.timeLeft &#x3D; 0;<br>endGame();–失败</p>
+<p>clearInterval(gameState.timer);<br>clearInterval(gameState.hackerInterval);<br>score &#x3D; -1;<br>document.getElementById(‘end-title’).textContent &#x3D; ‘异常结果’;<br>document.getElementById(‘end-message’).textContent &#x3D; ‘检测到异常分数，获取到以下数据：’;<br>document.getElementById(‘element’).textContent &#x3D; atob(‘ZmxhZ3sxOTQ5MmMyOS00YjA5LTQzM2YtOGI5Zi1mYjI2ZTI0Mjg5ZDV9’);<br>document.getElementById(‘container’).classList.remove(‘hidden’);<br>document.getElementById(‘game-area’).classList.add(‘opacity-0’, ‘pointer-events-none’);<br>document.getElementById(‘end-screen’).classList.remove(‘opacity-0’, ‘pointer-events-none’);<br>–失败</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>打开网页源代码查找可疑字符串<br>得到Base64编码的字符串<br>解码</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://penhuoshuwa.github.io/2025/11/05/%E5%89%8D%E7%AB%AF%E5%B0%8F%E6%B8%B8%E6%88%8F/" data-id="cmhksx5av0009fow96igsh0je" data-title="web前端小游戏" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-SQL注入漏洞（工具注入）" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2025/11/04/SQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E%EF%BC%88%E5%B7%A5%E5%85%B7%E6%B3%A8%E5%85%A5%EF%BC%89/" class="article-date">
@@ -107,7 +156,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://penhuoshuwa.github.io/2025/11/04/SQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E%EF%BC%88%E5%B7%A5%E5%85%B7%E6%B3%A8%E5%85%A5%EF%BC%89/" data-id="cmhkknz5k00011kw9htj8f6tg" data-title="SQL注入漏洞（工具注入）" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://penhuoshuwa.github.io/2025/11/04/SQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E%EF%BC%88%E5%B7%A5%E5%85%B7%E6%B3%A8%E5%85%A5%EF%BC%89/" data-id="cmhksx5av0008fow906xt6vre" data-title="SQL注入漏洞（工具注入）" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -146,7 +195,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://penhuoshuwa.github.io/2025/11/04/%E5%88%A9%E7%94%A8burp%20suit%20%E4%BF%AE%E6%94%B9%E6%94%AF%E4%BB%98%E9%87%91%E9%A2%9D/" data-id="cmhkknz5t000a1kw9enf926v3" data-title="利用burp suit修改支付金额" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://penhuoshuwa.github.io/2025/11/04/%E5%88%A9%E7%94%A8burp%20suit%20%E4%BF%AE%E6%94%B9%E6%94%AF%E4%BB%98%E9%87%91%E9%A2%9D/" data-id="cmhksx5b2000cfow9bode5mxd" data-title="利用burp suit修改支付金额" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -197,7 +246,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://penhuoshuwa.github.io/2025/10/12/hello-world/" data-id="cmhkknz5r00081kw92ejphiqy" data-title="Hello World" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://penhuoshuwa.github.io/2025/10/12/hello-world/" data-id="cmhksx5ar0003fow97xob7c0t" data-title="Hello World" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -236,7 +285,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://penhuoshuwa.github.io/2025/09/23/to%20%E5%93%88%E7%BB%B4%E9%85%B1/" data-id="cmhkknz5q00061kw99cgo82b7" data-title="To 哈维酱" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://penhuoshuwa.github.io/2025/09/23/to%20%E5%93%88%E7%BB%B4%E9%85%B1/" data-id="cmhksx5ao0001fow97fj4csi7" data-title="To 哈维酱" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -275,7 +324,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://penhuoshuwa.github.io/2025/09/23/%E9%98%B2%E8%AF%88%E5%B0%8F%E8%AF%BE%E5%A0%82/" data-id="cmhkknz5s00091kw96ej12l0g" data-title="你掉进陷阱了！" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://penhuoshuwa.github.io/2025/09/23/%E9%98%B2%E8%AF%88%E5%B0%8F%E8%AF%BE%E5%A0%82/" data-id="cmhksx5ax000afow9dgco22uc" data-title="你掉进陷阱了！" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -294,6 +343,13 @@
           <aside id="sidebar">
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/2025-CTF-week1/">2025-?CTF-week1</a></li></ul>
+    </div>
+  </div>
+
 
   
     
@@ -318,6 +374,10 @@
       <ul>
         
           <li>
+            <a href="/2025/11/05/%E5%89%8D%E7%AB%AF%E5%B0%8F%E6%B8%B8%E6%88%8F/">web前端小游戏</a>
+          </li>
+        
+          <li>
             <a href="/2025/11/04/SQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E%EF%BC%88%E5%B7%A5%E5%85%B7%E6%B3%A8%E5%85%A5%EF%BC%89/">SQL注入漏洞（工具注入）</a>
           </li>
         
@@ -331,10 +391,6 @@
         
           <li>
             <a href="/2025/09/23/to%20%E5%93%88%E7%BB%B4%E9%85%B1/">To 哈维酱</a>
-          </li>
-        
-          <li>
-            <a href="/2025/09/23/%E9%98%B2%E8%AF%88%E5%B0%8F%E8%AF%BE%E5%A0%82/">你掉进陷阱了！</a>
           </li>
         
       </ul>
