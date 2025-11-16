@@ -102,7 +102,98 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://penhuoshuwa.github.io/2025/11/08/burp_suit_%E5%85%A5%E9%97%A8/" data-id="cmhvpyekw000afww9cppl5zxr" data-title="burp_suit_入门" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://penhuoshuwa.github.io/2025/11/08/burp_suit_%E5%85%A5%E9%97%A8/" data-id="cmi12h7a90001kow92t1za0io" data-title="burp_suit_入门" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-from_http" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/11/05/from_http/" class="article-date">
+  <time class="dt-published" datetime="2025-11-04T16:00:00.000Z" itemprop="datePublished">2025-11-05</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/2025-CTF-week1/">2025-?CTF-week1</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2025/11/05/from_http/">from_http</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="从HTTP入门吧"><a href="#从HTTP入门吧" class="headerlink" title="从HTTP入门吧"></a>从HTTP入门吧</h1><p>修改请求包—关于HTTP协议操作<br><img src="/images/http1.png"><br>修改请求包，打开burp suit抓包修改<br><img src="/images/http2.png"><br><img src="/images/http3.png"><br>因为需要多次、连续地修改请求，并且每次修改都基于前一次的结果，所以使用repeater<br><img src="/images/http4.png"><br>前往repeater修改<br><img src="/images/http5.png"><br><img src="/images/http6.png"><br><img src="/images/http7.png"><br><img src="/images/http8.png"><br><img src="/images/http9.png"><br><img src="/images/http10.png"><br><img src="/images/http11.png"><br><img src="/images/http12.png"><br>获得flag</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>通过burp suit连续修改抓包获得flag<br>需明白GET POST 等请求头的书写格式，Referer  X-Forwarded-For 等请求头的含义作用</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://penhuoshuwa.github.io/2025/11/05/from_http/" data-id="cmi12h7ak000akow97ssc6krw" data-title="from_http" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-前端小游戏" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/11/05/%E5%89%8D%E7%AB%AF%E5%B0%8F%E6%B8%B8%E6%88%8F/" class="article-date">
+  <time class="dt-published" datetime="2025-11-04T16:00:00.000Z" itemprop="datePublished">2025-11-05</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/2025-CTF-week1/">2025-?CTF-week1</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2025/11/05/%E5%89%8D%E7%AB%AF%E5%B0%8F%E6%B8%B8%E6%88%8F/">web前端小游戏</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="抓取黑客"><a href="#抓取黑客" class="headerlink" title="抓取黑客"></a>抓取黑客</h1><h2 id="先打开页面源代码看看"><a href="#先打开页面源代码看看" class="headerlink" title="先打开页面源代码看看"></a>先打开页面源代码看看</h2><p>通过ctrl+F查找flag，无果<br>查找外部引用的资源，.js文件,.css文件,图片等<br>找到script src&#x3D;”game.js”&gt;&lt;&#x2F;script</p>
+<h2 id="进入可疑文件查找"><a href="#进入可疑文件查找" class="headerlink" title="进入可疑文件查找"></a>进入可疑文件查找</h2><p>“game.js”发现当分数小于0时有个atob函数atob(‘ZmxhZ3sxOTQ5MmMyOS00YjA5LTQzM2YtOGI5Zi1mYjI2ZTI0Mjg5ZDV9’)<br><img src="/images/w1-1.png"><br>注：abto函数是用来解码Base64编码的字符串的</p>
+<h2 id="检查-控制台-允许粘贴-解码"><a href="#检查-控制台-允许粘贴-解码" class="headerlink" title="检查-控制台-允许粘贴-解码"></a>检查-控制台-允许粘贴-解码</h2><p>flag{19492c29-4b09-433f-8b9f-fb26e24289d5}</p>
+<h2 id="改变源代码来得到flag"><a href="#改变源代码来得到flag" class="headerlink" title="改变源代码来得到flag"></a>改变源代码来得到flag</h2><p><img src="/images/w1-3.png"><br>将更改后的game.js粘贴至控制台，开始游戏并抓到1个黑客便可获得flag。</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>打开网页源代码查找可疑字符串<br>得到Base64编码的字符串<br>解码<br>或是更改源代码并运行获得flag</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://penhuoshuwa.github.io/2025/11/05/%E5%89%8D%E7%AB%AF%E5%B0%8F%E6%B8%B8%E6%88%8F/" data-id="cmi12h7al000ckow95p6ia82z" data-title="web前端小游戏" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -147,7 +238,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://penhuoshuwa.github.io/2025/11/05/Ping%EF%BC%9F%EF%BC%9F/" data-id="cmhvpyekj0001fww9a28vhghf" data-title="webPing？？" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://penhuoshuwa.github.io/2025/11/05/Ping%EF%BC%9F%EF%BC%9F/" data-id="cmi12h7ao000kkow94kn71txx" data-title="webPing？？" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -159,16 +250,12 @@
 
 
   
-    <article id="post-from_http" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-利用burp suit 修改支付金额" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2025/11/05/from_http/" class="article-date">
-  <time class="dt-published" datetime="2025-11-04T16:00:00.000Z" itemprop="datePublished">2025-11-05</time>
+    <a href="/2025/11/04/%E5%88%A9%E7%94%A8burp%20suit%20%E4%BF%AE%E6%94%B9%E6%94%AF%E4%BB%98%E9%87%91%E9%A2%9D/" class="article-date">
+  <time class="dt-published" datetime="2025-11-03T16:00:00.000Z" itemprop="datePublished">2025-11-04</time>
 </a>
     
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/2025-CTF-week1/">2025-?CTF-week1</a>
-  </div>
-
   </div>
   <div class="article-inner">
     
@@ -177,7 +264,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2025/11/05/from_http/">from_http</a>
+      <a class="p-name article-title" href="/2025/11/04/%E5%88%A9%E7%94%A8burp%20suit%20%E4%BF%AE%E6%94%B9%E6%94%AF%E4%BB%98%E9%87%91%E9%A2%9D/">利用burp suit修改支付金额</a>
     </h1>
   
 
@@ -185,62 +272,12 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h1 id="从HTTP入门吧"><a href="#从HTTP入门吧" class="headerlink" title="从HTTP入门吧"></a>从HTTP入门吧</h1><p>修改请求包—关于HTTP协议操作<br><img src="/images/http1.png"><br>修改请求包，打开burp suit抓包修改<br><img src="/images/http2.png"><br><img src="/images/http3.png"><br>因为需要多次、连续地修改请求，并且每次修改都基于前一次的结果，所以使用repeater<br><img src="/images/http4.png"><br>前往repeater修改<br><img src="/images/http5.png"><br><img src="/images/http6.png"><br><img src="/images/http7.png"><br><img src="/images/http8.png"><br><img src="/images/http9.png"><br><img src="/images/http10.png"><br><img src="/images/http11.png"><br><img src="/images/http12.png"><br>获得flag</p>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>通过burp suit连续修改抓包获得flag<br>需明白GET POST 等请求头的书写格式，Referer  X-Forwarded-For 等请求头的含义作用</p>
+        <p>打开burp 内嵌浏览器并输入网址 <a target="_blank" rel="noopener" href="https://www.navicat.com.cn/">https://www.navicat.com.cn/</a> 进入navicat官网，随便选择一个项目进入支付页面<br><img src="/images/burp_1.png"><br>打开抓包开关，找到金额部分并修改<br><img src="/images/burp_2.png"><br>最后forward all便可出现修改金额后的支付码<br><img src="/images/burp_3.png"><br>注：该漏洞已修复，支付金额不能收到货</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://penhuoshuwa.github.io/2025/11/05/from_http/" data-id="cmhvpyeky000dfww93d5sapvx" data-title="from_http" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-前端小游戏" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2025/11/05/%E5%89%8D%E7%AB%AF%E5%B0%8F%E6%B8%B8%E6%88%8F/" class="article-date">
-  <time class="dt-published" datetime="2025-11-04T16:00:00.000Z" itemprop="datePublished">2025-11-05</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/2025-CTF-week1/">2025-?CTF-week1</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2025/11/05/%E5%89%8D%E7%AB%AF%E5%B0%8F%E6%B8%B8%E6%88%8F/">web前端小游戏</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="抓取黑客"><a href="#抓取黑客" class="headerlink" title="抓取黑客"></a>抓取黑客</h1><h2 id="先打开页面源代码看看"><a href="#先打开页面源代码看看" class="headerlink" title="先打开页面源代码看看"></a>先打开页面源代码看看</h2><p>通过ctrl+F查找flag，无果<br>查找外部引用的资源，.js文件,.css文件,图片等<br>分别找到一个link href&#x3D;”<a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css</a>“ rel&#x3D;”stylesheet”<br>与一个script src&#x3D;”game.js”&gt;&lt;&#x2F;script</p>
-<h2 id="进入可疑文件查找"><a href="#进入可疑文件查找" class="headerlink" title="进入可疑文件查找"></a>进入可疑文件查找</h2><p>“<a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css%22%E5%A4%AA%E7%83%A6%E4%BA%86%E5%85%88%E7%9C%8B%E5%8F%A6%E4%B8%80%E4%B8%AA">https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css&quot;太烦了先看另一个</a><br>“game.js”发现当分数小于0时有个atob函数atob(‘ZmxhZ3sxOTQ5MmMyOS00YjA5LTQzM2YtOGI5Zi1mYjI2ZTI0Mjg5ZDV9’)<br><img src="/images/w1-1.png"><br>注：abto函数是用来解码Base64编码的字符串的</p>
-<h2 id="检查-控制台-允许粘贴-解码"><a href="#检查-控制台-允许粘贴-解码" class="headerlink" title="检查-控制台-允许粘贴-解码"></a>检查-控制台-允许粘贴-解码</h2><p>flag{19492c29-4b09-433f-8b9f-fb26e24289d5}</p>
-<h2 id="尝试分数改为负数查看是否能得到flag"><a href="#尝试分数改为负数查看是否能得到flag" class="headerlink" title="尝试分数改为负数查看是否能得到flag"></a>尝试分数改为负数查看是否能得到flag</h2><p>score &#x3D; -1<br>updateScore()–失败</p>
-<p>score &#x3D; -1;<br>gameState.timeLeft &#x3D; 0;<br>endGame();–失败</p>
-<p>clearInterval(gameState.timer);<br>clearInterval(gameState.hackerInterval);<br>score &#x3D; -1;<br>document.getElementById(‘end-title’).textContent &#x3D; ‘异常结果’;<br>document.getElementById(‘end-message’).textContent &#x3D; ‘检测到异常分数，获取到以下数据：’;<br>document.getElementById(‘element’).textContent &#x3D; atob(‘ZmxhZ3sxOTQ5MmMyOS00YjA5LTQzM2YtOGI5Zi1mYjI2ZTI0Mjg5ZDV9’);<br>document.getElementById(‘container’).classList.remove(‘hidden’);<br>document.getElementById(‘game-area’).classList.add(‘opacity-0’, ‘pointer-events-none’);<br>document.getElementById(‘end-screen’).classList.remove(‘opacity-0’, ‘pointer-events-none’);<br>–失败</p>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>打开网页源代码查找可疑字符串<br>得到Base64编码的字符串<br>解码</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://penhuoshuwa.github.io/2025/11/05/%E5%89%8D%E7%AB%AF%E5%B0%8F%E6%B8%B8%E6%88%8F/" data-id="cmhvpyekz000ffww978b3evd8" data-title="web前端小游戏" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://penhuoshuwa.github.io/2025/11/04/%E5%88%A9%E7%94%A8burp%20suit%20%E4%BF%AE%E6%94%B9%E6%94%AF%E4%BB%98%E9%87%91%E9%A2%9D/" data-id="cmi12h7aj0008kow9cpvn9wl3" data-title="利用burp suit修改支付金额" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -289,46 +326,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://penhuoshuwa.github.io/2025/11/04/SQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E%EF%BC%88%E5%B7%A5%E5%85%B7%E6%B3%A8%E5%85%A5%EF%BC%89/" data-id="cmhvpyekv0009fww97kmgcor6" data-title="SQL注入漏洞（工具注入）" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-利用burp suit 修改支付金额" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2025/11/04/%E5%88%A9%E7%94%A8burp%20suit%20%E4%BF%AE%E6%94%B9%E6%94%AF%E4%BB%98%E9%87%91%E9%A2%9D/" class="article-date">
-  <time class="dt-published" datetime="2025-11-03T16:00:00.000Z" itemprop="datePublished">2025-11-04</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2025/11/04/%E5%88%A9%E7%94%A8burp%20suit%20%E4%BF%AE%E6%94%B9%E6%94%AF%E4%BB%98%E9%87%91%E9%A2%9D/">利用burp suit修改支付金额</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>打开burp 内嵌浏览器并输入网址 <a target="_blank" rel="noopener" href="https://www.navicat.com.cn/">https://www.navicat.com.cn/</a> 进入navicat官网，随便选择一个项目进入支付页面<br><img src="/images/burp_1.png"><br>打开抓包开关，找到金额部分并修改<br><img src="/images/burp_2.png"><br>最后forward all便可出现修改金额后的支付码<br><img src="/images/burp_3.png"><br>注：该漏洞已修复，支付金额不能收到货</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://penhuoshuwa.github.io/2025/11/04/%E5%88%A9%E7%94%A8burp%20suit%20%E4%BF%AE%E6%94%B9%E6%94%AF%E4%BB%98%E9%87%91%E9%A2%9D/" data-id="cmhvpyel0000ifww9hq652wl8" data-title="利用burp suit修改支付金额" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://penhuoshuwa.github.io/2025/11/04/SQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E%EF%BC%88%E5%B7%A5%E5%85%B7%E6%B3%A8%E5%85%A5%EF%BC%89/" data-id="cmi12h7al000ekow95ccf30ri" data-title="SQL注入漏洞（工具注入）" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -379,7 +377,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://penhuoshuwa.github.io/2025/10/12/hello-world/" data-id="cmhvpyeky000efww94qrg71al" data-title="Hello World" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://penhuoshuwa.github.io/2025/10/12/hello-world/" data-id="cmi12h7ag0006kow992nyfjsg" data-title="Hello World" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -418,7 +416,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://penhuoshuwa.github.io/2025/09/23/to%20%E5%93%88%E7%BB%B4%E9%85%B1/" data-id="cmhvpyekx000bfww97oxrejil" data-title="To 哈维酱" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://penhuoshuwa.github.io/2025/09/23/to%20%E5%93%88%E7%BB%B4%E9%85%B1/" data-id="cmi12h7ac0003kow9hyoq31by" data-title="To 哈维酱" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -457,7 +455,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://penhuoshuwa.github.io/2025/09/23/%E9%98%B2%E8%AF%88%E5%B0%8F%E8%AF%BE%E5%A0%82/" data-id="cmhvpyekz000gfww9ahpfbweo" data-title="你掉进陷阱了！" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://penhuoshuwa.github.io/2025/09/23/%E9%98%B2%E8%AF%88%E5%B0%8F%E8%AF%BE%E5%A0%82/" data-id="cmi12h7am000gkow93s07a2b0" data-title="你掉进陷阱了！" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -511,10 +509,6 @@
           </li>
         
           <li>
-            <a href="/2025/11/05/Ping%EF%BC%9F%EF%BC%9F/">webPing？？</a>
-          </li>
-        
-          <li>
             <a href="/2025/11/05/from_http/">from_http</a>
           </li>
         
@@ -523,7 +517,11 @@
           </li>
         
           <li>
-            <a href="/2025/11/04/SQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E%EF%BC%88%E5%B7%A5%E5%85%B7%E6%B3%A8%E5%85%A5%EF%BC%89/">SQL注入漏洞（工具注入）</a>
+            <a href="/2025/11/05/Ping%EF%BC%9F%EF%BC%9F/">webPing？？</a>
+          </li>
+        
+          <li>
+            <a href="/2025/11/04/%E5%88%A9%E7%94%A8burp%20suit%20%E4%BF%AE%E6%94%B9%E6%94%AF%E4%BB%98%E9%87%91%E9%A2%9D/">利用burp suit修改支付金额</a>
           </li>
         
       </ul>
