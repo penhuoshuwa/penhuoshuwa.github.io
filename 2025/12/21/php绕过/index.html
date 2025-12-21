@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.33.1" theme-name="Stellar" theme-version="1.33.1">
   
-  <meta name="robots" content="noindex,follow">
+  
   <meta name="generator" content="Hexo 7.3.0">
   <meta http-equiv='x-dns-prefetch-control' content='on' />
   
@@ -17,16 +17,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000">
   <meta name="theme-color" content="#f9fafb">
-  <title>归档 - butterfly</title>
+  <title>ezrce - butterfly</title>
 
   
-    <meta property="og:type" content="website">
-<meta property="og:title" content="归档">
-<meta property="og:url" content="https://penhuoshuwa.github.io/archives/2025/09/">
+    <meta name="description" content="漏洞类型：rce打开网页获得php代码 获得信息：采用白名单，只允许’A-Z’ ‘a-z’ ( ) _ ; 通过burp suit抓包修改请求头获得根目录GET &#x2F;?code&#x3D;print_r(scandir(DIRECTORY_SEPARATOR)); HTTP&#x2F;1.1得到flag位于根目录索引5 改变目录得到flagGET &#x2F;?code&#x3D;chdi">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ezrce">
+<meta property="og:url" content="https://penhuoshuwa.github.io/2025/12/21/php%E7%BB%95%E8%BF%87/">
 <meta property="og:site_name" content="butterfly">
+<meta property="og:description" content="漏洞类型：rce打开网页获得php代码 获得信息：采用白名单，只允许’A-Z’ ‘a-z’ ( ) _ ; 通过burp suit抓包修改请求头获得根目录GET &#x2F;?code&#x3D;print_r(scandir(DIRECTORY_SEPARATOR)); HTTP&#x2F;1.1得到flag位于根目录索引5 改变目录得到flagGET &#x2F;?code&#x3D;chdi">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://penhuoshuwa.github.io/images/25is1-1">
+<meta property="og:image" content="https://penhuoshuwa.github.io/images/25is1-2">
+<meta property="og:image" content="https://penhuoshuwa.github.io/images/25is1-3">
+<meta property="article:published_time" content="2025-12-20T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-12-21T11:28:54.915Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://penhuoshuwa.github.io/images/25is1-1">
   
   
   
@@ -42,12 +50,12 @@
 
   
 
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Website","@id":"https://penhuoshuwa.github.io","author":{"@type":"Person","name":"John Doe","sameAs":[]},"name":"butterfly","description":"","url":"https://penhuoshuwa.github.io"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"John Doe","sameAs":[]},"dateCreated":"2025-12-21T00:00:00+08:00","dateModified":"2025-12-21T19:28:54+08:00","datePublished":"2025-12-21T00:00:00+08:00","description":"","headline":"ezrce","mainEntityOfPage":{"@type":"WebPage","@id":"https://penhuoshuwa.github.io/2025/12/21/php%E7%BB%95%E8%BF%87/"},"publisher":{"@type":"Organization","name":"John Doe","sameAs":[]},"url":"https://penhuoshuwa.github.io/2025/12/21/php%E7%BB%95%E8%BF%87/","image":[]}</script>
   
 </head>
 <body>
 
-<div class="l_body index" id="start" layout="undefined" type="undefined" ><aside class="l_left"><div class="sidebg"></div><div class="leftbar-container">
+<div class="l_body content" id="start" layout="post" type="tech" ><aside class="l_left"><div class="sidebg"></div><div class="leftbar-container">
 
 
 <header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="/images/butterfly.png" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></a><a class="title" href="/"><div class="main">butterfly</div></a></div></header>
@@ -59,21 +67,64 @@
 <div class="widgets">
 <div class="search-wrapper" id="search-wrapper"><form class="search-form"><a class="search-button" onclick="document.getElementById(&quot;search-input&quot;).focus();"><svg t="1705074644177" viewBox="0 0 1025 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1560" width="200" height="200"><path d="M1008.839137 935.96571L792.364903 719.491476a56.783488 56.783488 0 0 0-80.152866 0 358.53545 358.53545 0 1 1 100.857314-335.166073 362.840335 362.840335 0 0 1-3.689902 170.145468 51.248635 51.248635 0 1 0 99.217358 26.444296 462.057693 462.057693 0 1 0-158.255785 242.303546l185.930047 185.725053a51.248635 51.248635 0 0 0 72.568068 0 51.248635 51.248635 0 0 0 0-72.978056z" p-id="1561"></path><path d="M616.479587 615.969233a50.428657 50.428657 0 0 0-61.498362-5.534852 174.655348 174.655348 0 0 1-177.525271 3.484907 49.403684 49.403684 0 0 0-58.833433 6.76482l-3.074918 2.869923a49.403684 49.403684 0 0 0 8.609771 78.10292 277.767601 277.767601 0 0 0 286.992355-5.739847 49.403684 49.403684 0 0 0 8.404776-76.667958z" p-id="1562"></path></svg></a><input type="text" class="search-input" id="search-input" placeholder="站内搜索"></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div>
 
+
+
 <widget class="widget-wrapper slide-up recent post-list"><div class="widget-header dis-select"><span class="name">最近更新</span></div><div class="widget-body fs14"><a class="item title" href="/2025/12/21/php%E7%BB%95%E8%BF%87/"><span class="title">ezrce</span></a><a class="item title" href="/2025/11/16/%E7%BE%8E%E5%91%B3%E9%A3%9F%E7%89%A9/"><span class="title">美味食物</span></a><a class="item title" href="/2025/11/05/%E5%89%8D%E7%AB%AF%E5%B0%8F%E6%B8%B8%E6%88%8F/"><span class="title">web前端小游戏</span></a><a class="item title" href="/2025/11/05/from_http/"><span class="title">from_http</span></a><a class="item title" href="/2025/11/04/SQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E%EF%BC%88%E5%B7%A5%E5%85%B7%E6%B3%A8%E5%85%A5%EF%BC%89/"><span class="title">SQL注入漏洞（工具注入）</span></a><a class="item title" href="/2025/11/05/Ping%EF%BC%9F%EF%BC%9F/"><span class="title">webPing？？</span></a><a class="item title" href="/2025/11/04/%E5%88%A9%E7%94%A8burp%20suit%20%E4%BF%AE%E6%94%B9%E6%94%AF%E4%BB%98%E9%87%91%E9%A2%9D/"><span class="title">利用burp suit修改支付金额</span></a><a class="item title" href="/2025/09/23/%E9%98%B2%E8%AF%88%E5%B0%8F%E8%AF%BE%E5%A0%82/"><span class="title">你掉进陷阱了！</span></a><a class="item title" href="/2025/09/23/to%20%E5%93%88%E7%BB%B4%E9%85%B1/"><span class="title">To 哈维酱</span></a><a class="item title" href="/2025/10/12/hello-world/"><span class="title">Hello World</span></a></div></widget>
 </div>
 
 </div></aside><div class="l_main" id="main">
 
-<header class="header mobile-only"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="/images/butterfly.png" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></a><a class="title" href="/"><div class="main">butterfly</div></a></div></header>
-
- 
 
 
-<div class="navbar top"><div class="navbar-blur"><div class="navbar-container"><nav class="post"><a href="/">近期发布</a><a href="/categories/">分类</a><a class="active" href="/archives/">归档</a></nav></div></div></div><div class="post-list archives"><article class="slide-up" id="archive"><div class='archive-header h4'>2025</div><div class="archive-list"><a class='post fs14' href="/2025/12/21/php%E7%BB%95%E8%BF%87/"><time>12-21</time><span>ezrce</span></a></div><div class="archive-list"><a class='post fs14' href="/2025/11/16/%E7%BE%8E%E5%91%B3%E9%A3%9F%E7%89%A9/"><time>11-16</time><span>美味食物</span></a></div><div class="archive-list"><a class='post fs14' href="/2025/11/05/Ping%EF%BC%9F%EF%BC%9F/"><time>11-05</time><span>webPing？？</span></a></div><div class="archive-list"><a class='post fs14' href="/2025/11/05/from_http/"><time>11-05</time><span>from_http</span></a></div><div class="archive-list"><a class='post fs14' href="/2025/11/05/%E5%89%8D%E7%AB%AF%E5%B0%8F%E6%B8%B8%E6%88%8F/"><time>11-05</time><span>web前端小游戏</span></a></div><div class="archive-list"><a class='post fs14' href="/2025/11/04/SQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E%EF%BC%88%E5%B7%A5%E5%85%B7%E6%B3%A8%E5%85%A5%EF%BC%89/"><time>11-04</time><span>SQL注入漏洞（工具注入）</span></a></div><div class="archive-list"><a class='post fs14' href="/2025/11/04/%E5%88%A9%E7%94%A8burp%20suit%20%E4%BF%AE%E6%94%B9%E6%94%AF%E4%BB%98%E9%87%91%E9%A2%9D/"><time>11-04</time><span>利用burp suit修改支付金额</span></a></div><div class="archive-list"><a class='post fs14' href="/2025/10/12/hello-world/"><time>10-12</time><span>Hello World</span></a></div><div class="archive-list"><a class='post fs14' href="/2025/09/23/to%20%E5%93%88%E7%BB%B4%E9%85%B1/"><time>09-23</time><span>To 哈维酱</span></a></div><div class="archive-list"><a class='post fs14' href="/2025/09/23/%E9%98%B2%E8%AF%88%E5%B0%8F%E8%AF%BE%E5%A0%82/"><time>09-23</time><span>你掉进陷阱了！</span></a></div></article></div>
+
+
+<div class="article banner slide-up top">
+  <div class="content">
+    <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
+<span class="sep"></span><a class="cap breadcrumb" href="/">文章</a><span class="sep"></span><a class="cap breadcrumb-link" href="/categories/2025-ISCTF/">2025-ISCTF</a></div>
+<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2025-12-20T16:00:00.000Z">2025-12-21</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2025-12-21T11:28:54.915Z">2025-12-21</time></span></div></div></div>
+    
+    <div class="bottom only-title">
+      
+      <div class="text-area">
+        <h1 class="text title"><span>ezrce</span></h1>
+        
+      </div>
+    </div>
+    
+  </div>
+  </div><article class="md-text content slide-up"><h1 id="漏洞类型：rce"><a href="#漏洞类型：rce" class="headerlink" title="漏洞类型：rce"></a>漏洞类型：rce</h1><h2 id="打开网页获得php代码"><a href="#打开网页获得php代码" class="headerlink" title="打开网页获得php代码"></a>打开网页获得php代码</h2><p><img src="/images/25is1-1"></p>
+<h2 id="获得信息："><a href="#获得信息：" class="headerlink" title="获得信息："></a>获得信息：</h2><p>采用白名单，只允许’A-Z’ ‘a-z’ ( ) _ ;</p>
+<h1 id="通过burp-suit抓包修改请求头"><a href="#通过burp-suit抓包修改请求头" class="headerlink" title="通过burp suit抓包修改请求头"></a>通过burp suit抓包修改请求头</h1><h2 id="获得根目录"><a href="#获得根目录" class="headerlink" title="获得根目录"></a>获得根目录</h2><p><strong>GET &#x2F;?code&#x3D;print_r(scandir(DIRECTORY_SEPARATOR)); HTTP&#x2F;1.1</strong><br><img src="/images/25is1-2"><br>得到flag位于根目录索引5</p>
+<h2 id="改变目录得到flag"><a href="#改变目录得到flag" class="headerlink" title="改变目录得到flag"></a>改变目录得到flag</h2><p><strong>GET &#x2F;?code&#x3D;chdir(DIRECTORY_SEPARATOR);readfile(flag); HTTP&#x2F;1.1</strong><br><img src="/images/25is1-3"><br>得到flag</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>因只允许’A-Z’ ‘a-z’ ( ) _ ; 所以不能使用GET &#x2F;?code&#x3D;readfile(‘&#x2F;flag’); HTTP&#x2F;1.1等直接读取flag<br>先使用函数<strong>GET &#x2F;?code&#x3D;print_r(scandir(DIRECTORY_SEPARATOR)); HTTP&#x2F;1.1</strong>获得根目录<br><strong>DIRECTORY_SEPARATOR</strong>–PHP 里的一个内置常量，Windows中是’&#39;<br><strong>scandir</strong>()–扫描  <strong>scandir(“&quot;)</strong>–扫描根目录<br>然后使用<strong>GET &#x2F;?code&#x3D;chdir(DIRECTORY_SEPARATOR);readfile(flag); HTTP&#x2F;1.1</strong>获得flag<br><strong>chdir(DIRECTORY_SEPARATOR)</strong>–切换到根目录 &#x2F;<br><strong>readfile(flag)</strong>–读取flag文件  或是<strong>echo(file_get_contents(flag))</strong></p>
+</article>
+<div class="article-footer slide-up">
+    <section id="license">
+      <div class="header"><span>许可协议</span></div>
+      <div class="body"><p>本文采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a> 许可协议，转载请注明出处。</p>
+</div>
+    </section>
+    
+
+</div>
+
+<div class="related-wrap slide-up" id="read-next"><section class="body"><div class="item" id="prev"></div><div class="item" id="next"><div class="note">较早文章</div><a href="/2025/11/16/%E7%BE%8E%E5%91%B3%E9%A3%9F%E7%89%A9/">美味食物</a></div></section></div>
+
+
+
+
+
+
 <footer class="page-footer slide-up footnote"><hr><div class="text"><p>本站由 <a href="/">John Doe</a> 使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.33.1">Stellar 1.33.1</a> 主题创建。<br>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
 </div></footer>
 <div class="main-mask" onclick="sidebar.dismiss()"></div></div><aside class="l_right">
-</aside><div class='float-panel'>
+<div class="widgets">
+
+
+
+<widget class="widget-wrapper slide-up toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">本文目录</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%BC%8F%E6%B4%9E%E7%B1%BB%E5%9E%8B%EF%BC%9Arce"><span class="toc-text">漏洞类型：rce</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%89%93%E5%BC%80%E7%BD%91%E9%A1%B5%E8%8E%B7%E5%BE%97php%E4%BB%A3%E7%A0%81"><span class="toc-text">打开网页获得php代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%8E%B7%E5%BE%97%E4%BF%A1%E6%81%AF%EF%BC%9A"><span class="toc-text">获得信息：</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%80%9A%E8%BF%87burp-suit%E6%8A%93%E5%8C%85%E4%BF%AE%E6%94%B9%E8%AF%B7%E6%B1%82%E5%A4%B4"><span class="toc-text">通过burp suit抓包修改请求头</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%8E%B7%E5%BE%97%E6%A0%B9%E7%9B%AE%E5%BD%95"><span class="toc-text">获得根目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%94%B9%E5%8F%98%E7%9B%AE%E5%BD%95%E5%BE%97%E5%88%B0flag"><span class="toc-text">改变目录得到flag</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a></li></ol></div><div class="widget-footer"><a class="top" onclick="util.scrollTop()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"><path stroke-linejoin="round" d="m9 15.5l3-3l3 3m-6-4l3-3l3 3"/><path d="M7 3.338A9.95 9.95 0 0 1 12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12c0-1.821.487-3.53 1.338-5"/></g></svg><span>回到顶部</span></a></div></widget>
+</div></aside><div class='float-panel'>
   <button type='button' style='display:none' class='laptop-only rightbar-toggle mobile' onclick='sidebar.rightbar()'>
     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg>
   </button>
