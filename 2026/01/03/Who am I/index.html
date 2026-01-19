@@ -32,8 +32,9 @@
 <meta property="og:image" content="https://penhuoshuwa.github.io/images/25is3-3.png">
 <meta property="og:image" content="https://penhuoshuwa.github.io/images/25is3-4.png">
 <meta property="og:image" content="https://penhuoshuwa.github.io/images/25is3-5.png">
+<meta property="og:image" content="https://penhuoshuwa.github.io/images/25is3-6.png">
 <meta property="article:published_time" content="2026-01-02T16:00:00.000Z">
-<meta property="article:modified_time" content="2026-01-19T17:02:09.715Z">
+<meta property="article:modified_time" content="2026-01-19T17:15:41.919Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://penhuoshuwa.github.io/images/25is3-1.png">
@@ -52,7 +53,7 @@
 
   
 
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"John Doe","sameAs":[]},"dateCreated":"2026-01-03T00:00:00+08:00","dateModified":"2026-01-20T01:02:09+08:00","datePublished":"2026-01-03T00:00:00+08:00","description":"","headline":"Who am I","mainEntityOfPage":{"@type":"WebPage","@id":"https://penhuoshuwa.github.io/2026/01/03/Who%20am%20I/"},"publisher":{"@type":"Organization","name":"John Doe","sameAs":[]},"url":"https://penhuoshuwa.github.io/2026/01/03/Who%20am%20I/","image":[]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"John Doe","sameAs":[]},"dateCreated":"2026-01-03T00:00:00+08:00","dateModified":"2026-01-20T01:15:41+08:00","datePublished":"2026-01-03T00:00:00+08:00","description":"","headline":"Who am I","mainEntityOfPage":{"@type":"WebPage","@id":"https://penhuoshuwa.github.io/2026/01/03/Who%20am%20I/"},"publisher":{"@type":"Organization","name":"John Doe","sameAs":[]},"url":"https://penhuoshuwa.github.io/2026/01/03/Who%20am%20I/","image":[]}</script>
   
 </head>
 <body>
@@ -84,7 +85,7 @@
   <div class="content">
     <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
 <span class="sep"></span><a class="cap breadcrumb" href="/">文章</a><span class="sep"></span><a class="cap breadcrumb-link" href="/categories/2025-ISCTF/">2025-ISCTF</a></div>
-<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2026-01-02T16:00:00.000Z">2026-01-03</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2026-01-19T17:02:09.715Z">2026-01-20</time></span></div></div></div>
+<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2026-01-02T16:00:00.000Z">2026-01-03</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2026-01-19T17:15:41.919Z">2026-01-20</time></span></div></div></div>
     
     <div class="bottom only-title">
       
@@ -98,9 +99,9 @@
   </div><article class="md-text content slide-up"><h1 id="首先去注册然后登录时抓包"><a href="#首先去注册然后登录时抓包" class="headerlink" title="首先去注册然后登录时抓包"></a>首先去注册然后登录时抓包</h1><p><img src="/images/25is3-1.png"></p>
 <h1 id="进入到管理员页面，查看配置文件可以看后端python的源码"><a href="#进入到管理员页面，查看配置文件可以看后端python的源码" class="headerlink" title="进入到管理员页面，查看配置文件可以看后端python的源码"></a>进入到管理员页面，查看配置文件可以看后端python的源码</h1><p><img src="/images/25is3-2.png"><br>观察到有使用pydash，考虑pydash原型链污染</p>
 <h1 id="并找到渲染路由"><a href="#并找到渲染路由" class="headerlink" title="并找到渲染路由"></a>并找到渲染路由</h1><p><img src="/images/25is3-3.png"></p>
-<h1 id="把渲染时的目录改为"><a href="#把渲染时的目录改为" class="headerlink" title="把渲染时的目录改为&#x2F;"></a>把渲染时的目录改为&#x2F;</h1><p><strong>&#x2F;operate?username&#x3D;app&amp;password&#x3D;jinja_loader.searchpath.0&amp;confirm_password&#x3D;&#x2F;</strong><br>其中第一个参数 <strong>app</strong> 拿全局变量<br>第二个参数 <strong>jinja_loader.searchpath.0</strong> 让解析器第一个解析的目录(因为render_template函数用flask框架的loader去解析文件，而flask一般是jinja模板)<br>第三个参数 &#x2F; 设置到根目录</p>
-<h1 id="得到success-渲染成功"><a href="#得到success-渲染成功" class="headerlink" title="得到success 渲染成功"></a>得到success 渲染成功</h1><p><img src="/images/25is3-4.png"></p>
-<h1 id="访问impression路由拿到-flag"><a href="#访问impression路由拿到-flag" class="headerlink" title="访问impression路由拿到&#x2F;flag"></a>访问impression路由拿到&#x2F;flag</h1><p><img src="/images/25is3-5.png"></p>
+<h1 id="把渲染时的目录改为"><a href="#把渲染时的目录改为" class="headerlink" title="把渲染时的目录改为&#x2F;"></a>把渲染时的目录改为&#x2F;</h1><p><img src="/images/25is3-4.png"><br><strong>&#x2F;operate?username&#x3D;app&amp;password&#x3D;jinja_loader.searchpath.0&amp;confirm_password&#x3D;&#x2F;</strong><br>其中第一个参数 <strong>app</strong> 拿全局变量<br>第二个参数 <strong>jinja_loader.searchpath.0</strong> 让解析器第一个解析的目录(因为render_template函数用flask框架的loader去解析文件，而flask一般是jinja模板)<br>第三个参数 &#x2F; 设置到根目录</p>
+<h1 id="得到success-渲染成功"><a href="#得到success-渲染成功" class="headerlink" title="得到success 渲染成功"></a>得到success 渲染成功</h1><p><img src="/images/25is3-5.png"></p>
+<h1 id="访问impression路由拿到-flag"><a href="#访问impression路由拿到-flag" class="headerlink" title="访问impression路由拿到&#x2F;flag"></a>访问impression路由拿到&#x2F;flag</h1><p><img src="/images/25is3-6.png"></p>
 <h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>有登录界面首先尝试以管理员身份登录，想到通过抓包修改请求进入管理员界面<br>抓包可看到type是客户端可控的、有明确取值的参数，尝试修改，其中除1，0外的数字或非数字都会报错<br>python源码文件中发现有可渲染的路由 <strong>pydash.set_(Username,password,confirm_password)</strong><br>根据给的路由路径和参数名污染payload<br>渲染成功代表 app.jinja_env.loader.searchpath[0] 变为了 &#x2F;<br>此时访问 &#x2F;impression?point&#x3D;flag 模板加载器会优先去 &#x2F; 目录找 flag 文件（即 &#x2F;flag）。</p>
 </article>
 <div class="article-footer slide-up">
